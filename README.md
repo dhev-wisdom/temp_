@@ -58,7 +58,7 @@ REQUIRED SECTIONS:
 
 > Live Demo
 
-- [Available soon](# https://dev-diskord-497ca070fcd4.herokuapp.com/)
+- [Available soon]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
