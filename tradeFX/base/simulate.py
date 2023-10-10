@@ -1,10 +1,10 @@
+from background_task import background
 from .models import Trader
 from decimal import Decimal
 from django.utils import timezone, timesince
 import random
 
 def simulate_profit_loss():
-    print('simulate called')
     traders = Trader.objects.all()
 
     for trader in traders:
@@ -14,5 +14,3 @@ def simulate_profit_loss():
         trader.last_trade_time = timezone.now().strftime('%Y-%m-%d %H:%M:%S')
         trader.total_profit = trader.balance - 100
         trader.save()
-        trader.start_time = trader.timestamp.strftime("%Y-%m-%d")
-        # trader.time_trade_last = timesince(trader.last_trade_time)

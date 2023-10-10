@@ -43,8 +43,10 @@ const AdminDashboard = () => {
     socket.onmessage = (event) => {
       const data = JSON.parse(event.data);
       console.log('Received trader data:', data);
-      const updatedTraders = [...traders, ...data];
-
+      console.log('traders: ', traders);
+      console.log('data: ', data.data);
+      const updatedTraders = [...traders, ...data.data];
+      console.log(updatedTraders);
       setTraders(updatedTraders);
     };
 
@@ -89,8 +91,8 @@ console.log('test');
           </tr>
         </thead>
         <tbody style={body}>
-          {traders.map((trader) => (
-            <tr key={trader.id}>
+          {traders.map((trader, index) => (
+            <tr key={index}>
               <td style={data}>{trader.id}</td>
               <td style={data}>{trader.name}</td>
               <td style={data}>$100.00</td>
