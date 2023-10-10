@@ -3,9 +3,9 @@ from asgiref.sync import async_to_sync, sync_to_async
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from .models import Trader
-import logging
+# import logging
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 class TraderConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -18,7 +18,7 @@ class TraderConsumer(AsyncWebsocketConsumer):
 
     async def send_initial_trader_data(self):
         trader_data = await self.fetch_trader_data()
-        logger.info('Sending initial trader data: %s', trader_data)
+        # logger.info('Sending initial trader data')
         await self.send(json.dumps({
             'type': 'trader_data',
             'data': trader_data,
@@ -26,7 +26,7 @@ class TraderConsumer(AsyncWebsocketConsumer):
 
     async def send_trader_data(self, event):
         trader_data = event['trader_data']
-        logger.info('Sending trader data: %s', trader_data)
+        # logger.info('Sending trader data')
         await self.send(json.dumps({
             'type': 'trader_data',
             'data': trader_data,
@@ -35,8 +35,7 @@ class TraderConsumer(AsyncWebsocketConsumer):
     async def start_periodic_updates(self):
         while True:
             trader_data = await self.fetch_trader_data()
-            print("Sending trader data from periodic")
-            logger.info("Sending trader data from periodic")
+            # logger.info("Sending trader data from periodic")
             await self.send_trader_data({"trader_data": trader_data})
             await asyncio.sleep(60)
 
