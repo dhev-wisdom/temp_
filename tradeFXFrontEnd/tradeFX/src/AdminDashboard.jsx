@@ -1,39 +1,11 @@
 import React, { useEffect, useState } from 'react';
-// import Chart from 'chart.js';
-import ReactTable from 'react-table';
-import io from 'socket.io-client';
+import { Link } from 'react-router-dom';
 
 const AdminDashboard = () => {
-  // State to store trader data
   const [traders, setTraders] = useState([]);
 
-  
-  // const fetchTraders = async () => {
-  //   try {
-  //     const response = await fetch('http://127.0.0.1:8000/api/trders/');
-  //     if (response.status === 200) {
-  //       const data = await response.json();
-  //       console.log('Fetch successful');
-  //       setTraders(data);
-  //     } else {
-  //       console.error('Failed to fetch traders');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error fetching traders:', error);
-  //   }
-  // };
-
-  // setInterval(() => {
-  //   console.log("fetchTraders called");
-  //   fetchTraders();
-  // }, 60000);
-
-  // useEffect(() => {
-
-  // }, []);
-
   useEffect(() => {
-    const socket = new WebSocket('ws://localhost:8000/ws/traders/'); // Import WebSocket
+    const socket = new WebSocket('ws://localhost:8000/ws/traders/');
 
     socket.onopen = () => {
       console.log('WebSocket connected');
@@ -53,24 +25,31 @@ const AdminDashboard = () => {
     socket.onclose = () => {
       console.log('WebSocket disconnected');
     };
-
-    // return () => socket.close();
   }, []);
 
   const style = {
-    width: '100vw',
+    width: '100%',
     padding: '50px',
     textAlign: 'center',
     fontSize: '16px',
+    border: '2px solid rgb(75, 192, 192)',
+    borderCollapse: 'collapse',
 };
 const body = {
   padding: '20px',
+  border: '1px solid rgb(75, 192, 192)',
+  borderCollapse: 'collapse',
 }
 const data = {
   marginBottom: '50px',
+  height: '50px',
+  padding: '20px auto',
 }
 const center = {
-  textAlign: 'center',
+  overFlowX: 'auto',
+  boxSizing: 'border-box',
+  width: '100vw',
+  padding: '20px',
 }
 console.log('test');
 
@@ -105,6 +84,9 @@ console.log('test');
           ))}
         </tbody>
       </table>
+        <br /><br /><br />
+        <Link to="/user-dashboard">Go To User Dashboard</Link>
+        
     </div>
   );
 };
