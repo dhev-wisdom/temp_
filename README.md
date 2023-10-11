@@ -61,6 +61,11 @@ REQUIRED SECTIONS:
 <img src="disp1.png" />
 <img src="disp2.png" />
 <img src="disp3.png" />
+<video controls>
+    <source src="vid.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
