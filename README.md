@@ -58,7 +58,9 @@ REQUIRED SECTIONS:
 
 > Live Demo
 
-- [Available soon]<img src="img/disp1.jpg" />
+<img src="disp1.png" />
+<img src="disp2.png" />
+<img src="disp3.png" />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
