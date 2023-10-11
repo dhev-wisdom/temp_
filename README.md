@@ -40,7 +40,7 @@ REQUIRED SECTIONS:
 # 📖 [tradeFX] <a name="about-project"></a>
 
 
-**[tradeFX]** is a mock trading interface built with Django and React. This project allows the visualization of real-time trading data upadting in charts and graphs
+**[tradeFX]** is a mock trading interface built with Django and React. This project allows the visualization of real-time trading data upadating in charts and graphs
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -58,7 +58,7 @@ REQUIRED SECTIONS:
 
 > Live Demo
 
-- [Available soon]
+- [Available soon]<img src="img/disp1.jpg" />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
